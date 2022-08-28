@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Valkompassen2022/static/css/main.5e460712.css",
-    "main.js": "/Valkompassen2022/static/js/main.00b949bd.js",
+    "main.js": "/Valkompassen2022/static/js/main.c19092e9.js",
     "static/js/787.f4aca923.chunk.js": "/Valkompassen2022/static/js/787.f4aca923.chunk.js",
     "index.html": "/Valkompassen2022/index.html",
     "main.5e460712.css.map": "/Valkompassen2022/static/css/main.5e460712.css.map",
-    "main.00b949bd.js.map": "/Valkompassen2022/static/js/main.00b949bd.js.map",
+    "main.c19092e9.js.map": "/Valkompassen2022/static/js/main.c19092e9.js.map",
     "787.f4aca923.chunk.js.map": "/Valkompassen2022/static/js/787.f4aca923.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5e460712.css",
-    "static/js/main.00b949bd.js"
+    "static/js/main.c19092e9.js"
   ]
 }
