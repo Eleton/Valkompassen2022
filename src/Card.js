@@ -8,6 +8,7 @@ const Card = styled.main`
   max-height: 800px;
   display: flex;
   align-items: stretch;
+  flex: 1;
 `;
 
 export default Card;

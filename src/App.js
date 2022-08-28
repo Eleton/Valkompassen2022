@@ -5,7 +5,7 @@ import Home from "./Home";
 import Question from "./Question";
 import Result from "./Result";
 
-const Container = styled.main`
+const Container = styled.div`
   box-sizing: border-box;
   height: 100%;
   display: flex;
@@ -74,7 +74,7 @@ const levelToParty = (level) => {
 };
 
 export default function App() {
-  const [view, setView] = React.useState("result");
+  const [view, setView] = React.useState("home");
   const [level, setLevel] = React.useState(0);
   return (
     <ThemeProvider theme={theme}>

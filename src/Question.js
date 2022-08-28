@@ -5,6 +5,7 @@ import Card from "./Card";
 const Layout = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
+  flex: 1;
 `;
 
 const H2 = styled.h2`

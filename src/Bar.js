@@ -43,7 +43,6 @@ const PartyEmblem = styled.div`
 `;
 
 const Bar = ({ percentage, party, color }) => {
-  console.log(color);
   return (
     <Container>
       <Percentage>{percentage}</Percentage>
