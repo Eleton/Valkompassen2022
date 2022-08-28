@@ -11,12 +11,6 @@ const Layout = styled.div`
   flex: 1;
 `;
 
-const H2 = styled.h2`
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 0;
-`;
-
 const Intro = styled.p`
   font-size: 1.5rem;
   text-align: center;

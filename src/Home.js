@@ -37,6 +37,7 @@ const ConsentButton = styled.button`
   padding: 0.5rem 1rem;
   width: 100%;
   border: 2px solid black;
+  box-sizing: border-box;
 `;
 const Button = styled.button`
   font-size: 2rem;
