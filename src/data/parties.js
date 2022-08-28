@@ -35,7 +35,7 @@ const parties = [
     party: "s",
     intro: "Socialdemokraterna",
     description:
-      "Det absolut värsta med SD, det är att dom har tagit så många S-väljare. Vissa spekulanter hävdar att S+SD kan ingå regeringssamarbete inom några mandatperioder, men till dess håller vi dom på dubbel armlängds avstånd.",
+      "Du vill ha en hel del av SDs politik, men i så fall måste den genomföras av sympatiska politiker och den ska inte genomföras för tidigt.",
     color: "rgb(237, 27, 52)",
   },
   {
@@ -51,7 +51,7 @@ const parties = [
     party: "c",
     intro: "Centerpartiet",
     description:
-      "För dig är fråga så viktig att den går att tycka, om SD också tycker den. Förutom det gemensamma föraktet emot Vänsterpartiet.",
+      "För dig är ingen fråga så viktig att den går att tycka, om SD också tycker den. Förutom det gemensamma föraktet emot Vänsterpartiet.",
     color: "rgb(17, 72, 56)",
   },
   {
