@@ -47,31 +47,23 @@ const theme = createTheme({
     mp: {
       main: "rgb(83, 160, 69)",
     },
+    afs: {
+      main: "rgb(249, 197, 53)",
+    },
+    med: {
+      main: "rgb(43, 79, 122)",
+    },
+    pp: {
+      main: "rgb(81, 36, 131)",
+    },
+    fi: {
+      main: "rgb(217, 50, 138)",
+    },
+    pn: {
+      main: "rgb(237, 124, 48)",
+    },
   },
 });
-
-const levelToParty = (level) => {
-  switch (level) {
-    case 0:
-      return "sd";
-    case 1:
-      return "kd";
-    case 2:
-      return "m";
-    case 3:
-      return "l";
-    case 4:
-      return "s";
-    case 5:
-      return "v";
-    case 6:
-      return "c";
-    case 7:
-      return "mp";
-    default:
-      return "sd";
-  }
-};
 
 export default function App() {
   const [view, setView] = React.useState("home");
@@ -79,17 +71,16 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        {view === "home" && <Home setView={setView} />}
+        {view === "home" && <Home setView={setView} setLevel={setLevel} />}
         {view === "question" && (
-          <Question
-            level={level}
-            setLevel={setLevel}
-            levelToParty={levelToParty}
-            setView={setView}
-          />
+          <Question level={level} setLevel={setLevel} setView={setView} />
         )}
-        {view === "result" && (
-          <Result level={level} levelToParty={levelToParty} setView={setView} />
+        {view === "question_plus" && (
+          <Question level={level} setLevel={setLevel} setView={setView} plus />
+        )}
+        {view === "result" && <Result level={level} setView={setView} />}
+        {view === "result_plus" && (
+          <Result level={level} setView={setView} plus />
         )}
       </Container>
     </ThemeProvider>

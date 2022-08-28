@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Slider from "@mui/material/Slider";
 import Card from "./Card";
+import { levelToParty, levelToParty2 } from "./data/levelConverter";
 
 const Layout = styled.div`
   display: grid;
@@ -26,40 +27,100 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const Button = styled.button`
   font-size: 2rem;
   color: ivory;
   background-color: #222;
   border-radius: 9999px;
-  padding: 0.5rem 4rem;
+  padding: 0.5rem 1rem;
   width: 100%;
+  border: none;
 `;
 
-const Question = ({ level, levelToParty, setLevel, setView }) => {
+const Question = ({ level, setLevel, setView, plus }) => {
   return (
     <Card>
-      <Layout>
-        <H2>På en skala från 0 till 7, hur emot SD är du?</H2>
-        <SliderContainer>
-          <H2>{level}</H2>
-          <Slider
-            aria-label="Temperature"
-            orientation="vertical"
-            value={level}
-            valueLabelDisplay="auto"
-            color={levelToParty(level)}
-            step={1}
-            marks
-            min={0}
-            max={7}
-            onChange={(e) => setLevel(e.target.value)}
-            size="large"
-          />
-        </SliderContainer>
-        <ButtonContainer>
-          <Button onClick={() => setView("result")}>Nästa</Button>
-        </ButtonContainer>
-      </Layout>
+      {!plus ? (
+        <Layout>
+          <H2>På en skala från 0 till 7, hur emot SD är du?</H2>
+          <SliderContainer>
+            <H2>{level}</H2>
+            <Slider
+              aria-label="Temperature"
+              orientation="vertical"
+              value={level}
+              valueLabelDisplay="auto"
+              color={levelToParty(level)}
+              step={1}
+              marks
+              min={0}
+              max={7}
+              onChange={(e) => setLevel(e.target.value)}
+              size="large"
+            />
+          </SliderContainer>
+          <ButtonContainer>
+            <Button
+              onClick={() => {
+                localStorage.setItem(levelToParty(level), true);
+                setView("result");
+              }}
+            >
+              Nästa
+            </Button>
+          </ButtonContainer>
+        </Layout>
+      ) : (
+        <Layout>
+          <H2>
+            På en skala från -1 till 10, hur emot SD är du? Utanför Riksdagen
+            Edition
+          </H2>
+          <SliderContainer className="Plus-slider-container">
+            <H2>{level}</H2>
+            <Slider
+              aria-label="Temperature"
+              orientation="vertical"
+              value={level}
+              valueLabelDisplay="auto"
+              color={levelToParty2(level)}
+              step={null}
+              marks={[
+                {
+                  value: -1,
+                },
+                {
+                  value: 0,
+                },
+                {
+                  value: 4,
+                },
+                {
+                  value: 9,
+                },
+                {
+                  value: 10,
+                },
+              ]}
+              min={-1}
+              max={10}
+              onChange={(e) => setLevel(e.target.value)}
+              size="large"
+            />
+          </SliderContainer>
+          <ButtonContainer>
+            <Button
+              onClick={() => {
+                localStorage.setItem(levelToParty(level), true);
+                setView("result_plus");
+              }}
+            >
+              Nästa
+            </Button>
+          </ButtonContainer>
+        </Layout>
+      )}
     </Card>
   );
 };

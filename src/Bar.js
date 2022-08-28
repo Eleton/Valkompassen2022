@@ -35,11 +35,12 @@ const PartyEmblem = styled.div`
   align-items: center;
   background-color: ${({ color }) => color};
   border-radius: 9999px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   text-transform: uppercase;
   color: ivory;
   justify-self: center;
+  font-size: 0.8rem;
 `;
 
 const Bar = ({ percentage, party, color }) => {

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 
@@ -17,20 +18,45 @@ const P = styled.p`
   text-align: center;
 `;
 
+const P2 = styled.p`
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+`;
+
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 12px;
+`;
+const ConsentButton = styled.button`
+  font-size: 2rem;
+  color: #222;
+  border-radius: 9999px;
+  background-color: ivory;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: 2px solid black;
 `;
 const Button = styled.button`
   font-size: 2rem;
   color: ivory;
   background-color: #222;
   border-radius: 9999px;
-  padding: 0.5rem 4rem;
+  padding: 0.5rem 1rem;
   width: 100%;
+  border: none;
 `;
 
-const Home = ({ setView }) => {
+const consentCookie =
+  localStorage.getItem("consent") === "false" ? false : true;
+
+const Home = ({ setView, setLevel }) => {
+  const [consent, setConsent] = useState(consentCookie);
+  const plus = ["sd", "kd", "m", "l", "s", "v", "c", "mp"]
+    .map((p) => localStorage.getItem(p))
+    .every((b) => b === "true");
+
   return (
     <Card>
       <Layout>
@@ -40,9 +66,50 @@ const Home = ({ setView }) => {
           valet 2022!
         </P>
         <div />
+        {consent ? (
+          <div>
+            <P2>Vill du att vi sparar data om dig?</P2>
+            <ButtonContainer>
+              <ConsentButton
+                onClick={() => {
+                  localStorage.setItem("consent", false);
+                  setConsent(false);
+                }}
+              >
+                Nej tack
+              </ConsentButton>
+            </ButtonContainer>
+          </div>
+        ) : (
+          <div>
+            <P2>
+              Vi har nu sparat data att du inte vill att vi sparar data om dig!
+              :)
+            </P2>
+          </div>
+        )}
         <ButtonContainer>
-          <Button onClick={() => setView("question")}>Start</Button>
+          <Button
+            onClick={() => {
+              setView("question");
+              setLevel(0);
+            }}
+          >
+            Start
+          </Button>
         </ButtonContainer>
+        {plus && (
+          <ButtonContainer>
+            <Button
+              onClick={() => {
+                setView("question_plus");
+                setLevel(-1);
+              }}
+            >
+              Start+
+            </Button>
+          </ButtonContainer>
+        )}
       </Layout>
     </Card>
   );

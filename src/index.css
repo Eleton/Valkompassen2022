@@ -38,3 +38,7 @@ code {
 .MuiSlider-root .MuiSlider-mark[data-index="7"] {
   bottom: 98% !important;
 }
+
+.Plus-slider-container .MuiSlider-root .MuiSlider-mark[data-index="4"] {
+  bottom: 98% !important;
+}
