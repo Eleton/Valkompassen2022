@@ -31,14 +31,17 @@ code {
   width: 12px;
 }
 
-.MuiSlider-root .MuiSlider-mark[data-index="0"] {
+.MuiSlider-root .MuiSlider-mark[data-index="0"],
+.MuiSlider-root .MuiSlider-markLabel[data-index="0"] {
   bottom: 2% !important;
 }
 
-.MuiSlider-root .MuiSlider-mark[data-index="7"] {
+.MuiSlider-root .MuiSlider-mark[data-index="7"],
+.MuiSlider-root .MuiSlider-markLabel[data-index="7"] {
   bottom: 98% !important;
 }
 
-.Plus-slider-container .MuiSlider-root .MuiSlider-mark[data-index="4"] {
+.Plus-slider-container .MuiSlider-root .MuiSlider-mark[data-index="4"],
+.Plus-slider-container .MuiSlider-root .MuiSlider-markLabel[data-index="4"] {
   bottom: 98% !important;
 }

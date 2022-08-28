@@ -45,7 +45,6 @@ const Question = ({ level, setLevel, setView, plus }) => {
         <Layout>
           <H2>På en skala från 0 till 7, hur emot SD är du?</H2>
           <SliderContainer>
-            <H2>{level}</H2>
             <Slider
               aria-label="Temperature"
               orientation="vertical"
@@ -53,7 +52,40 @@ const Question = ({ level, setLevel, setView, plus }) => {
               valueLabelDisplay="auto"
               color={levelToParty(level)}
               step={1}
-              marks
+              marks={[
+                {
+                  value: 0,
+                  label: "0",
+                },
+                {
+                  value: 1,
+                  label: "1",
+                },
+                {
+                  value: 2,
+                  label: "2",
+                },
+                {
+                  value: 3,
+                  label: "3",
+                },
+                {
+                  value: 4,
+                  label: "4",
+                },
+                {
+                  value: 5,
+                  label: "5",
+                },
+                {
+                  value: 6,
+                  label: "6",
+                },
+                {
+                  value: 7,
+                  label: "7",
+                },
+              ]}
               min={0}
               max={7}
               onChange={(e) => setLevel(e.target.value)}
@@ -78,7 +110,6 @@ const Question = ({ level, setLevel, setView, plus }) => {
             Edition
           </H2>
           <SliderContainer className="Plus-slider-container">
-            <H2>{level}</H2>
             <Slider
               aria-label="Temperature"
               orientation="vertical"
@@ -89,18 +120,23 @@ const Question = ({ level, setLevel, setView, plus }) => {
               marks={[
                 {
                   value: -1,
+                  label: "-1",
                 },
                 {
                   value: 0,
+                  label: "0",
                 },
                 {
                   value: 4,
+                  label: "4",
                 },
                 {
                   value: 9,
+                  label: "9",
                 },
                 {
                   value: 10,
+                  label: "10",
                 },
               ]}
               min={-1}
