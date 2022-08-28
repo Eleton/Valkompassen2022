@@ -11,7 +11,7 @@ const parties = [
     party: "kd",
     intro: "Kristdemokraterna",
     description:
-      "SDs förslag kan ibland kännas lite väl hårda, men om man strösslar formuleringarna med lite kristen värdegrund så låter dom ju ganska fräcka!",
+      "SDs förslag kan ibland kännas lite väl hårda, men om man strösslar formuleringarna med lite kristen värdegrund så låter dom ju faktiskt ganska fräcka!",
     color: "rgb(0, 94, 161)",
   },
   {
@@ -19,7 +19,7 @@ const parties = [
     party: "m",
     intro: "Moderaterna",
     description:
-      "En gång i tiden var SD paria men längtan efter makten tog till slut överhanden. Dom funkar dock bra som frontlinje för din favoritpolitik, låt SD gå ut med ett förslag först och se om det flyger och sen tre månader senare lanserar ni samma förslag med mer väl valda ord.",
+      "En gång i tiden var SD paria men längtan efter makten tog till slut överhanden. Dom funkar dock bra som frontlinje för din favoritpolitik, låt SD gå ut med sina kontroversiella förslag först och se vad som flyger, och sen tre månader senare lanserar ni samma förslag med snyggare retorik.",
     color: "rgb(82, 189, 236)",
   },
   {
@@ -35,7 +35,7 @@ const parties = [
     party: "s",
     intro: "Socialdemokraterna",
     description:
-      "Du vill ha en hel del av SDs politik, men i så fall måste den genomföras av sympatiska politiker och den ska inte genomföras för tidigt.",
+      "Du är helt okej med åtstramad migrationspolitik och socialt ingenjörsskap i utsatta områden, men i så fall ska det vara för att Morgan Johansson säger det, inte Tobias Andersson.",
     color: "rgb(237, 27, 52)",
   },
   {
@@ -59,7 +59,7 @@ const parties = [
     party: "mp",
     intro: "Miljöpartiet",
     description:
-      "Om SD är äpplen så är du päron. Det går helt enkelt inte att jämföra er. Du vill vara så långt ifrån Sverigedemokraterna som det bara går, och då är det bara Miljöpartiet eller Danmarkfascisterna som går att välja på.",
+      "Om SD är äpplen så är du päron. Det går helt enkelt inte att jämföra er. Du vill vara så långt ifrån Sverigedemokraterna som det bara går, och då står valet mellan Danmarkfascistera och Miljöpartiet, varav det ena inte existerar.",
     color: "rgb(83, 160, 69)",
   },
 ];
