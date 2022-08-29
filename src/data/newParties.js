@@ -27,7 +27,7 @@ const parties = [
     level: 9,
     party: "fi",
     intro: "Feministiskt Initiativ",
-    description: "FEMINSIM = ANTI-RASISM",
+    description: "FEMINISM = ANTI-RASISM",
     color: "rgb(217, 50, 138)",
   },
   {
