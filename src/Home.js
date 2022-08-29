@@ -49,10 +49,9 @@ const Button = styled.button`
   border: none;
 `;
 
-const consentCookie =
-  localStorage.getItem("consent") === "false" ? false : true;
-
 const Home = ({ setView, setLevel }) => {
+  const consentCookie =
+    localStorage.getItem("consent") === "false" ? false : true;
   const [consent, setConsent] = useState(consentCookie);
   const plus = ["sd", "kd", "m", "l", "s", "v", "c", "mp"]
     .map((p) => localStorage.getItem(p))
