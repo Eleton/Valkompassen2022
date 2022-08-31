@@ -42,6 +42,7 @@ const Button = styled.button`
   padding: 0.5rem 1rem;
   width: 100%;
   border: none;
+  cursor: pointer;
 `;
 
 const Result = ({ level, setView, plus }) => {

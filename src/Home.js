@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 
@@ -38,6 +38,7 @@ const ConsentButton = styled.button`
   width: 100%;
   border: 2px solid black;
   box-sizing: border-box;
+  cursor: pointer;
 `;
 const Button = styled.button`
   font-size: 2rem;
@@ -47,12 +48,14 @@ const Button = styled.button`
   padding: 0.5rem 1rem;
   width: 100%;
   border: none;
+  cursor: pointer;
 `;
 
 const Home = ({ setView, setLevel }) => {
   const consentCookie =
     localStorage.getItem("consent") === "false" ? false : true;
   const [consent, setConsent] = useState(consentCookie);
+  const timeout = useRef(null);
   const plus = ["sd", "kd", "m", "l", "s", "v", "c", "mp"]
     .map((p) => localStorage.getItem(p))
     .every((b) => b === "true");
@@ -93,6 +96,12 @@ const Home = ({ setView, setLevel }) => {
             onClick={() => {
               setView("question");
               setLevel(0);
+            }}
+            onTouchStart={(e) => {
+              timeout.current = setTimeout(() => localStorage.clear(), 2000);
+            }}
+            onTouchEnd={() => {
+              clearTimeout(timeout.current);
             }}
           >
             Start
